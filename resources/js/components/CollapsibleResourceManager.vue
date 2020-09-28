@@ -1,11 +1,11 @@
 <template>
 
-    <div v-if="!isEmpty || data.linkTo" :class="[ data.type, { 'mb-8': isTopLevel }, 'select-none' ]">
+    <div v-if="!isEmpty || data.linkTo" :class="[ data.type, { 'mb-6': isTopLevel }, 'select-none' ]">
 
         <component v-if="data.label && isTopLevel" v-bind="topLevelLink"
                    @click="toggleTopLevel"
                    :class="{ 'cursor-pointer': isTopCollapsible }"
-                   class="flex flex-1 items-center font-normal text-white mb-2 text-base no-underline relative">
+                   class="flex flex-1 items-center font-normal text-90 text-base no-underline relative">
 
             <div v-if="data.icon" class="sidebar-icon" v-html="data.icon"/>
 
@@ -16,7 +16,7 @@
 
             <Badge :label="data.badge" :dim="isTopCollapsible || data.linkTo">
 
-                <span class="flex text-white sidebar-label">
+                <span class="flex text-90 sidebar-label">
                     {{ data.label }}
                 </span>
 
@@ -38,7 +38,7 @@
 
         <template v-if="isGroup && data.resources.length">
 
-            <h4 class="relative select-none ml-8 mt-4 text-xs text-white-50% uppercase tracking-wide cursor-pointer"
+            <h4 class="relative select-none ml-8 mt-4 text-xs text-90 uppercase tracking-wide cursor-pointer"
                 v-if="data.label"
                 @click="toggleGroup(data.id)">
 
